@@ -18,5 +18,9 @@ Route::get('/', function()
 
 
 Route::get('articles', function() {
-	return 'artiekelen';
+	return 'artikelen';
+});
+
+Route::get('animals', function() {
+	return View::make('animals.index');
 });

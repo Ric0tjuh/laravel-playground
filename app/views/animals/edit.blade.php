@@ -1,0 +1,1 @@
+/Users/ricovp/Sites/scotchbox/public/rico-playground-laravel/app/views/animals/edit.blade.php
