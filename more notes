@@ -1,0 +1,28 @@
+COMPOSER:
+Als composer zeurt dat ie de juiste package niet kan vinden onder de default(=stable) opgegeven stability, zet dan -dev/@dev erachter 
+
+handige commando: composer require package-name{:versie(ifneeded)} {-stability(ifneeded)}, zodat je niet handmatig met nano composer.json in de composer.json file hoeft te kutten.
+dus: bijvoorbeeld: composer require way/generators:~2.0 -dev
+
+
+
+GENERATOR plugin sublime werkend maken (dat ding dat ze gebruiken in die epic youtube vid en een paar andere tutorials.
+
+stap 1: ctrl p -> install packages -> laravel generator
+
+stap 2: 'Way\Generators\GeneratorsServiceProvider' toevoegen aan 'Providers' in app->config->app.php 
+
+stap 3: via composer de juiste dependency inladen.
+
+commando (terwijl je ingelogd bent op server): composer require way/generators:~2.0 -dev
+OF in je composer.json kan je handmatig het volgende schrijven: "way/generators": "~2.0@dev" als je hierna composer update runt dan installeert het de 2.0 versie die minstens dev stability heeft en verwijderd het meteen de 3.0 versie :D
+
+er staat voor laravel <4.2 generator versie "way/generators": "~2.0" te gebruiken
+en voor laravel 5+ 							"way/generators": "~3.0" 
+
+Als je niet de juiste versie pakt dan zet ie bij runnen van het generate command namespace bij de model omdat laravel 5 met namespaces werkt end ie moet je dan dus steeds handmatig verwijderen.
+
+
+
+Als alles goed ingesteld is kan je nu via CTRL SHIFT p -> generate resource (of model of whatever) in 1x hele file strucrure en migrations aanmaken voor bijvoorbeel articles, products of whatever
+
